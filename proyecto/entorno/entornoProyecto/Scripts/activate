@@ -38,7 +38,11 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD
+VIRTUAL_ENV="C:\Users\Matias\Desktop\Informatorio\proyecto\entorno\entornoProyecto"
+=======
 VIRTUAL_ENV="C:\info23_e2_pf_g2\apts_Orlando\proyecto\entorno\entornoProyecto"
+>>>>>>> f0365f5191c0ed85fd2a1a9e2c1f6f8b736754df
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
