@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2^nhnk$yf#qm9_+l$*s4)x%5bg&r)s#mg*2x+7w=q9b#ejiek6'
 
 
-
+AUTH_USER_MODEL = "usuarios.Usuario"
 
 # Application definition
 
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.usuarios'
 ]
 
 MIDDLEWARE = [
@@ -51,7 +53,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(os.path.dirname(BASE_DIR), 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
