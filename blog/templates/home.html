@@ -1,40 +1,35 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>Blog de COCINA</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-</head>
-<body class="contenedor">
-  <header>
-    <h1>Blog de COCINA</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Recetas regionales</a></li>
-        <li><a href="{% url 'cocina' %}">Tips de cocina</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section>
-      <h2>Recetas recientes</h2>
-      <ul>
-        <li><a href="#">Locro</a></li>
-        <li><a href="#">Empanadas fritas</a></li>
-        <li><a href="#">Postre de chocolate</a></li>
-      </ul>
-    </section>
-    <section>
-      <h2>Próximas recetas</h2>
-      <ul>
-        <li><a href="#">Torta de chocolate</a></li>
-        <li><a href="#">Helado de vainilla</a></li>
-        <li><a href="#">Galletas con frutos secos</a></li>
-      </ul>
-    </section>
+
+{% block titulo %}Home{% endblock titulo %}
+
+{% block contenido %}
+    <header>
+      <h1>¡Bienvenidos a Degustando Sabores!</h1>
+      <p class="subtitle">Aquí, te sumergirás en un mundo culinario lleno de sabores, colores y aromas que despertarán tus sentidos.</p>
+      <p class="subtitle">Nuestro blog está dedicado a todos los amantes de la cocina, desde principiantes entusiastas hasta chefs experimentados.</p>
+      <p class="subtitle">Te brindaremos recetas exquisitas, consejos útiles, técnicas culinarias y mucho más para que puedas deleitar a tus seres queridos con deliciosos platillos y crear momentos inolvidables alrededor de la mesa.</p>
+    </header>
+    <main>
+      <section>
+        <h2>Recetas recientes</h2>
+        <ul>
+          <li><a href="#">Locro</a></li>
+          <li><a href="#">Empanadas fritas</a></li>
+          <li><a href="#">Postre de chocolate</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Próximas recetas</h2>
+        <ul>
+          <li><a href="#">Torta de chocolate</a></li>
+          <li><a href="#">Helado de vainilla</a></li>
+          <li><a href="#">Galletas con frutos secos</a></li>
+        </ul>
+      </section>
+    </main>
   </main>
   <footer>
-    <p>Copyright 2023 @infoproyecto/c6-g2
+    <p>Copyright 2023 @infoproyecto/c6-g2</p>
+  </footer>
+{% endblock contenido %}
