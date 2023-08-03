@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Tips de Cocina</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}NOSOTROS{% endblock titulo %}
+
+{% block contenido %}
    <h1>10 Consejos Esenciales para Mejorar tus Habilidades en la Cocina</h1>
    <p>¡Bienvenidos a nuestro espacio culinario! Aquí encontrarás una selección de consejos y trucos para elevar tus habilidades en la cocina y convertirte en un maestro de los fogones. Desde recetas básicas hasta técnicas más avanzadas, estos consejos te ayudarán a perfeccionar tus platos y a disfrutar aún más de la experiencia culinaria. ¡Empecemos!</p>
    <ol>
@@ -21,6 +19,4 @@
       <li><strong>Practica y disfruta:</strong> La cocina es un arte que mejora con la práctica constante. No te desanimes si algo no sale como esperabas en un principio. Disfruta el proceso y aprende de cada experiencia culinaria.</li>
    </ol>
    <p>Recuerda que la cocina es una forma de expresión creativa, así que diviértete mientras cocinas y comparte tus creaciones con amigos y familiares. ¡Buen provecho!</p>
-   <p><a href="{% url 'home' %}">Volver a Home</a></p>
-</body>
-</html>
+{% endblock contenido %}
