@@ -9,11 +9,12 @@
 </head>
 <body class="contenedor"> 
    <div> 
+      <img src="{% static 'img/logo.jpg' %}" width="630px" height="90px">
       <ol>
-       <a href="{% url 'home' %}">Volver a Home</a>   
-       <a href="{% url 'nosotros' %}">Bio del Blog</a>
-       <a href="{% url 'cocina' %}">Tips de Cocina</a>
-       <a href="{% url 'noticias:listar' %}">Ir a Recetas</a>
+         <a href="{% url 'home' %}">Volver a Home</a>   
+         <a href="{% url 'nosotros' %}">Bio del Blog</a>
+         <a href="{% url 'cocina' %}">Tips de Cocina</a>
+         <a href="{% url 'noticias:listar' %}">Ir a Recetas</a>
       </ol>
    </div>
    {% block contenido %}
