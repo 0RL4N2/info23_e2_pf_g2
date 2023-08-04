@@ -2,5 +2,5 @@
 Desarrollo del proyecto final de Programación y Desarrollo Web del Informatorio 2023 (comisión 6, grupo 2).
 
 # Desarrolladores:
-### PALAVECINO, Ramón Orlando
-### ABADIE, Eduardo Matias
+### Palavecino, Ramón Orlando
+### Abadie, Eduardo Matias
