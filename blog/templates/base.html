@@ -9,13 +9,23 @@
 </head>
 <body class="contenedor"> 
    <div> 
-      <img src="{% static 'img/logo.jpg' %}" width="630px" height="90px">
+      <img src="{% static 'img/logo.jpg' %}" width="840px" height="90px">
       <ol>
          <a href="{% url 'home' %}">Volver a Home</a>   
          <a href="{% url 'nosotros' %}">Bio del Blog</a>
          <a href="{% url 'cocina' %}">Tips de Cocina</a>
          <a href="{% url 'noticias:listar' %}">Ir a Recetas</a>
+
+         {% if user.is_authenticated %}
+         <strong>Hola {{ user.username }}</strong>
+         <a href="{% url 'logout' %}">LOGOUT</a>
+         {% else %}
+         <a href="{% url 'login' %}">LOGIN</a>
+         <a href="{% url 'registro' %}">REGISTRO</a>
+         {% endif %}
+
       </ol>
+
    </div>
    {% block contenido %}
    {% endblock contenido %}
