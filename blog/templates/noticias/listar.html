@@ -4,6 +4,58 @@
 {% block titulo %}Recetas{% endblock titulo %}
 
 {% block contenido %}
-   <h1>Acá están mis recetas!</h1>
-
+    <h2>Acá están mis recetas!</h2>
+    <div class="submenu">
+        <div class="dropdown">
+            <button class="dropdown-btn">Categorías</button>
+            <div class="dropdown-content">
+                <br>
+                <a href="{% url 'noticias:listar' %}">Todas las recetas</a>
+                {% for cat in categorias %}
+                <a href="?categoria={{ cat.pk }}">{{ cat.nombre }}</a>
+                {% endfor %}
+                <br>
+            </div>
+        </div>
+    </div>
+    <!-- Agregar espacio y un párrafo después del bloque de categorías -->
+    <p>&nbsp;</p>
+    <div class="dropdown">
+        <button class="dropdown-btn">Ordenar</button>
+        <br>
+        <div class="dropdown-content">
+            <br>
+            <a href="?antiguedad_asc=1">Más antiguas primero</a>
+            <a href="?antiguedad_desc=1">Más recientes primero</a>
+            <a href="?orden_asc=1">Orden alfabético ascendente</a>
+            <a href="?orden_desc=1">Orden alfabético descendente</a>
+        </div>
+        <br>
+    </div>
+    <a href="?antiguedad_asc=1">
+        <button class="arrow-btn">&#11014;</button>
+    </a>
+    <a href="?antiguedad_desc=1">
+        <button class="arrow-btn">&#11015;</button>
+    </a>
+    <!-- Agregar espacio y un párrafo después del bloque de menú -->
+    <br>
+    <p>&nbsp;</p>
+    {% if noticias %}
+        {% for noti in noticias %}
+            <img src="{{ noti.imagen.url }}" width="50">
+            <p><a href="{% url 'noticias:detalle' noti.pk %}">TITULO: {{ noti.titulo }}</a></p>
+            <p>FECHA: {{ noti.fecha_de_publicacion }}</p>
+            <p>CATEGORIA: {{ noti.categoria_noticia }}</p>
+            <p>CONTENIDO: {{ noti.contenido }}</p>
+            <!-- Agregar espacio y un párrafo para separar cada receta -->
+            <br>
+            <p>&nbsp;</p>
+        {% endfor %}
+    {% else %}
+        <h2>No hay recetas</h2>
+    {% endif %}
+    <!-- Agregar espacio y un párrafo después del mensaje "No hay recetas" -->
+    <br>
+    <p>&nbsp;</p>
 {% endblock contenido %}
