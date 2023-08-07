@@ -17,7 +17,9 @@ class Noticia(models.Model):
     #para imagen debemos instalar pillow
     imagen = models.ImageField(upload_to= 'noticias')
     categoria_noticia = models.ForeignKey(Categoria, on_delete= models.CASCADE) #SET_NULL
-    author = models.ForeignKey(Usuario, default=Usuario.objects.get(is_superuser=True).pk, on_delete=models.CASCADE)
+    #author = models.ForeignKey(Usuario, default=Usuario.objects.get(is_superuser=True).pk, on_delete=models.CASCADE) (No! No!)
+    author = models.ForeignKey(Usuario, default=Usuario.objects.filter(is_superuser=True).first(), on_delete=models.CASCADE)
+
 
     def __str__(self):
         return self.titulo
